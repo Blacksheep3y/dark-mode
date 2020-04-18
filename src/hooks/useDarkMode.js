@@ -13,6 +13,6 @@ export const useDarkMode = enableDM => {
             console.log('DARKMODE DISABLED');
             return () => { document.body.className = ''; }
          }
-    },[setdarkMode])
+    },[setdarkMode, enableDM])
     return [darkMode, setdarkMode];
 };
