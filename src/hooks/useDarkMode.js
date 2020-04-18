@@ -5,7 +5,7 @@ export const useDarkMode = enableDM => {
     const [darkMode, setdarkMode] = useLocalStorage(enableDM)
 
     useEffect(() => {
-        if (enableDM === enableDM){
+        if (darkMode !== enableDM){
             console.log('DARKMODE ENABLED');
             document.body.className = 'dark-mode';
          }
@@ -13,6 +13,6 @@ export const useDarkMode = enableDM => {
             console.log('DARKMODE DISABLED');
             return () => { document.body.className = ''; }
          }
-    },[setdarkMode, enableDM])
-    return [darkMode, setdarkMode];
+    },[darkMode, setdarkMode, enableDM])
+    return [darkMode, setdarkMode, enableDM];
 };
